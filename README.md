@@ -52,6 +52,19 @@ dsh plugin --profile web add github:mhwww/dsh-bg-image
 >
 > 视频壁纸“高清帧”功能需要系统 PATH 里有 `ffmpeg`（缺失时自动回退预览图）；Steam 创意工坊目录自动发现依赖 Windows 注册表（其他平台请用卡片里的手动绑定）。
 
+### 网络说明（国内用户）
+
+`github:` 依赖安装时，pnpm 会先用自己的 HTTPS 探测解析 commit（读的是 npm/pnpm 代理配置，不读 git 的），再回退到 `git ls-remote`（读 git 自己的代理配置）。因此：
+
+- 直连不稳的网络下，安装开头可能出现 2 行 `ETIMEDOUT` 重试警告——**最终仍会成功**（git 步骤通常可通）；个别失败重跑一次命令即可
+- 想彻底避免警告，任选其一配好代理：
+  ```sh
+  pnpm config set proxy      http://127.0.0.1:7897   # 换成你的代理端口
+  pnpm config set https-proxy http://127.0.0.1:7897
+  # 或只给 git 配（pnpm 探测仍会警告，但克隆不受影响）：
+  # git config --global http.https://github.com.proxy http://127.0.0.1:7897
+  ```
+
 ## 开发安装（本仓库克隆后）
 
 ```sh
