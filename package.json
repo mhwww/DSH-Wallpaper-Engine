@@ -1,0 +1,32 @@
+{
+  "name": "dsh-bg-image",
+  "version": "0.1.0",
+  "description": "Custom background image for the DeepSeek Harness web UI (theme token overlay + settings card)",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "assets/default-bg.png",
+    "cordis.patch.yml"
+  ],
+  "license": "MIT",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web"
+    }
+  },
+  "dependencies": {
+    "@deepseek-ai/dsh-settings": "^0.1.0-rc.6",
+    "@deepseek-ai/schemastery": "^3.18.1"
+  }
+}
