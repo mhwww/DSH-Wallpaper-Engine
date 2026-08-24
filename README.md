@@ -1,4 +1,4 @@
-# dsh-bg-image
+# DSH-Wallpaper-Engine
 
 [DeepSeek Harness（dsh）](https://github.com/deepseek-ai/deepseek-harness) Web UI 的自定义背景图片插件。
 
@@ -43,10 +43,10 @@ dsh 的 wire 面 `settings.describe` 对浏览器只暴露**硬编码白名单**
 ## 安装（一键）
 
 ```sh
-dsh plugin --profile web add github:mhwww/dsh-bg-image
+dsh plugin --profile web add github:mhwww/DSH-Wallpaper-Engine
 ```
 
-重启 `dsh --profile web` 后，设置页 →「插件」里即可配置。升级：`dsh plugin --profile web update dsh-bg-image`。
+重启 `dsh --profile web` 后，设置页 →「插件」里即可配置。升级：`dsh plugin --profile web update dsh-wallpaper-engine`。
 
 > 需要已安装 dsh 和 pnpm（`corepack enable pnpm`）。从 git 安装时 pnpm 会自动解析依赖（`@deepseek-ai/dsh-settings`、`schemastery` 均在 npm 公开仓库）。
 >
@@ -78,7 +78,7 @@ dsh --profile web                      # 重启服务生效
 ## 卸载
 
 ```sh
-dsh plugin --profile web remove dsh-bg-image
+dsh plugin --profile web remove dsh-wallpaper-engine
 ```
 
 ## 已知边界

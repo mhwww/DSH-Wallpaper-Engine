@@ -1,4 +1,4 @@
-# dsh-bg-image bundle patch: insert this plugin's rows into the profile.
+# dsh-wallpaper-engine bundle patch: insert this plugin's rows into the profile.
 - insert:
     - id: bg-image
-      name: dsh-bg-image
+      name: dsh-wallpaper-engine

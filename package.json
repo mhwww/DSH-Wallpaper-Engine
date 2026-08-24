@@ -1,5 +1,5 @@
 {
-  "name": "dsh-bg-image",
+  "name": "dsh-wallpaper-engine",
   "version": "0.1.0",
   "description": "Custom background image for the DeepSeek Harness web UI (theme token overlay + settings card)",
   "type": "module",
