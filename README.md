@@ -1,6 +1,6 @@
 # DSH-Wallpaper-Engine
 
-[DeepSeek Harness（dsh）](https://github.com/deepseek-ai/deepseek-harness) Web UI 的自定义背景图片插件。
+[DeepSeek Harness（dsh）](https://github.com/deepseek-ai/deepseek-harness) Web UI 的自定义背景图片插件——**联动 Wallpaper Engine**，一键把 Steam 创意工坊壁纸设为 dsh 自定义背景；也支持本地图床与内置默认背景。
 
 - **Wallpaper Engine 集成**：自动发现 Steam 创意工坊目录（注册表 + `libraryfolders.vdf`，也支持手动绑定），在设置卡片里浏览全部壁纸缩略图，**点一下即设为 DSH 背景**（image 类型用原图，scene/video/web 类型用预览图，gif 预览会动）
 - **内置默认背景**：插件自带一张渐变图（`assets/default-bg.png`），“恢复默认背景”一键切回
