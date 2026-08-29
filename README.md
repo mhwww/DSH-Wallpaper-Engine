@@ -2,7 +2,7 @@
 
 [DeepSeek Harness（dsh）](https://github.com/deepseek-ai/deepseek-harness) Web UI 的自定义背景图片插件——**联动 Wallpaper Engine**，一键把 Steam 创意工坊壁纸设为 dsh 自定义背景；也支持本地图床与内置默认背景。
 
-- **Wallpaper Engine 集成**：自动发现 Steam 创意工坊目录（注册表 + `libraryfolders.vdf`，也支持手动绑定），在设置卡片里浏览全部壁纸缩略图，**点一下即设为 DSH 背景**（image 类型用原图，scene/video/web 类型用预览图，gif 预览会动）
+- **Wallpaper Engine 集成**：自动发现 Steam 创意工坊目录（注册表 + `libraryfolders.vdf`，也支持手动绑定），在设置卡片里浏览全部壁纸缩略图，**点一下即设为 DSH 背景**；高清优先级：scene 壁纸解包 `scene.pkg` 取原生 4K 贴图 → video 壁纸 ffmpeg 抽原生帧 → Steam CDN 作者原图 → 本地预览（image 类型直接用原图；高清结果全部缓存，二次应用秒开）
 - **内置默认背景**：插件自带一张渐变图（`assets/default-bg.png`），“恢复默认背景”一键切回
 - **自定义上传**：点“选择图片…”从电脑选图立即应用，或直接填本机绝对路径
 - 明暗主题自动适配（浅色叠白遮罩、深色叠黑遮罩），遮罩不透明度可调，侧边栏可选择透出背景
@@ -50,7 +50,12 @@ dsh plugin --profile web add github:mhwww/DSH-Wallpaper-Engine
 
 > 需要已安装 dsh 和 pnpm（`corepack enable pnpm`）。从 git 安装时 pnpm 会自动解析依赖（`@deepseek-ai/dsh-settings`、`schemastery` 均在 npm 公开仓库）。
 >
-> 视频壁纸“高清帧”功能需要系统 PATH 里有 `ffmpeg`（缺失时自动回退预览图）；Steam 创意工坊目录自动发现依赖 Windows 注册表（其他平台请用卡片里的手动绑定）。
+> 高清增强均为**可选**，缺失时自动回退低清预览：
+> - **scene 壁纸原生 4K 素材**：[RePKG](https://github.com/notscuffed/repkg)（放到 `~/.dsh/bin/RePKG.exe`，或用 `REPKG_BIN` 环境变量指定路径），应用时自动解包 `scene.pkg` 取像素量最大的贴图
+> - **视频壁纸原生帧**：系统 PATH 里有 `ffmpeg`
+> - **scene/web 壁纸 Steam 原图**：无额外依赖（自动经代理链访问 Steam 公开 API）
+>
+> Steam 创意工坊目录自动发现依赖 Windows 注册表（其他平台请用卡片里的手动绑定）。
 
 ### 网络说明（国内用户）
 
